@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Proyecto CaC Python</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <h1>
+                <a href="../index.html">
+                    <img src="../images/Logo.svg" alt="logo">
+                </a>
+            </h1>
+            <ul>
+                <li><a href="../pages/nuestro_espacio.html">Nuestro Espacio</a></li>
+                <li><a href="../pages/menu.html">Menú</a></li>
+                <li><a href="../pages/reservas.html">Reservas</a></li>
+                <li>
+                    <a href="../pages/login.html" id="login">Log In</a>
+                    <div class="container-login hidden-cart">
+                            <div class="desplegable">
+                                <!-- <p class="cart-empty">El carrito está vacio</p> -->
+                            </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-contacto">
+        <div class="contenedor-contactanos">
+            <form class="contactanos formulario" id="formulario" enctype="multipart/form-data">
+            <!-- action="https://formspree.io/f/meqbnebd" -->
+                <h3 class="titulo__formulario">Bienvenido a tus datos !! </h3>
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="Nombre" class="formulario__label">Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="nombre" class="formulario__input" name="nombre">
+                    </div>
+                    <!-- <p class="formulario__input-error">Este campo debe contener de 2 a 15 digitos</p> -->
+                </div>
+
+                <div class="formulario__grupo" id="grupo__apellido">
+                    <label for="apellido" class="formulario__label">Apellido</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="apellido" class="formulario__input" placeholder="Perez" name="apellido">
+                    </div>
+                    <!-- <p class="formulario__input-error">Este campo debe contener de 2 a 15 digitos</p> -->
+                </div>
+
+                <div class="formulario__grupo" id="grupo__dni">
+                    <label for="dni" class="formulario__label">DNI</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="dni" class="formulario__input" name="dni">
+                    </div>
+                    <!-- <p class="formulario__input-error">Este campo debe contener 8 digitos</p> -->
+                </div>
+
+                <div class="formulario__grupo" id="grupo__email">
+                    <label for="email" class="formulario__label">Correo electronico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="email" class="formulario__input" placeholder="Juanperez@gmail.com" name="email">
+                    </div>
+                    <!-- <p class="formulario__input-error">Este campo solo admite estos caracteres especiales: "/" "_" "@"</p> -->
+                </div>
+
+                <!-- <div class="formulario__grupo" id="grupo__email-confirm">
+                    <label for="email-confirm" class="formulario__label">Confirmar correo</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="email-confirm" class="formulario__input" name="email-confirm">
+                    </div> -->
+                    <!-- <p class="formulario__input-error">Los correos deben coincidir</p> -->
+                <!-- </div> -->
+
+                <div class="formulario__grupo" id="grupo__password">
+                    <label for="password" class="formulario__label">Contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="password" class="formulario__input" name="password">
+                    </div>
+                    <!-- <p class="formulario__input-error">ESte campo debe contener de 6 a 15 digitos</p> -->
+                </div>
+
+                <!-- <div class="formulario__grupo" id="grupo__password-confirm">
+                    <label for="password-confirm" class="formulario__label">Confirmar contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" id="password-confirm" class="formulario__input" name="password-confirm">
+                    </div> -->
+                    <!-- <p class="formulario__input-error">Las contraseñas deben coincidir</p> -->
+                <!-- </div> -->
+
+                <!-- <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellena el formulario correctamente</p>
+                </div> -->
+                <section class="btn-contacto">
+                    <button type="submit" class="button" id="modificar"> Modificar</button>
+                    <button type="submit" class="button" id="eliminar"> Eliminar usuario </button>
+                    <!-- <input type="reset" value="Borrar" class="borrar"> -->
+                    <!-- <button class="button"><a href="../index.html"></a>Menú principal</button> -->
+                </section>
+            </form>
+        </div>
+    </main>
+    
+
+
+    <script src="../login.js"></script>
+    <script src="https://kit.fontawesome.com/25b6b6b0bb.js" crossorigin="anonymous"></script>
+    <script>
+
+    window.addEventListener('load', obtener_localstorage);
+
+    const elim = document.querySelector("#eliminar")
+    elim.addEventListener('click', eliminarUsuarioApi);
+
+    const modif = document.querySelector("#modificar")
+    modif.addEventListener('click', modificarUsuarioAPI)
+
+
+        function traerUsuarioAPI(event) {
+    // fetch('https://randomuser.me/api')
+    const URL = "http://127.0.0.1:5000/"
+    
+    const mail = document.querySelector("#mail").value
+    const contra = document.querySelector("#contraseña").value
+
+    // Capturamos el evento de envío del formulario
+    
+    event.preventDefault(); // Evitamos que se envie el form 
+    // console.log(mail);
+    var formData = new FormData();
+
+    
+    formData.append('mail', mail);
+    formData.append('contraseña', contra);
+
+
+        fetch(URL + 'usuario/'+'"'+ mail +'"/'+contra, { 
+        method: 'POST'
+        })
+            .then(function (response) {
+                if (response.ok) { return response.json(); }
+                })
+            .then(function (data) {
+                alert("Bienvenido "  + data.nombre)
+
+                window.location.href = '../pages/usuario.html';
+
+                })
+
+
+            .catch(function (error) {
+                // Mostramos el error, y no limpiamos el form.
+                alert('Usuario o contraseña incorrecto.');
+            })
+
+}
+
+
+function obtener_localstorage(e){
+    e.preventDefault()
+    // console.log('actualizo la pag')
+    if (localStorage.getItem('usuario')){
+        usuario1 = localStorage.getItem('usuario')
+        apellido1 = localStorage.getItem('apellido')
+        dni1 = localStorage.getItem('dni')
+        email1 = localStorage.getItem('email')
+        password1 = localStorage.getItem('password')
+        document.getElementById("nombre").setAttribute("value", usuario1)
+        document.getElementById("apellido").setAttribute("value", apellido1)
+        document.getElementById("dni").setAttribute("value", dni1)
+        document.getElementById("email").setAttribute("value", email1)
+        document.getElementById("password").setAttribute("value", password1)
+        // console.log(usuario1)
+    }else{
+        console.log("No hay entradas en el local storage")
+        
+    }
+    console.log(usuario1)
+    }
+
+    function eliminarUsuarioApi(event) {
+    // fetch('https://randomuser.me/api')
+    const URL = "http://127.0.0.1:5000/"
+    
+    // const nomb = document.querySelector("#nombre").value
+    // const ape = document.querySelector("#apellido").value
+    const dni = document.querySelector("#dni").value
+    // const email = document.querySelector("#email").value
+    // const contra = document.querySelector("#password").value
+
+    // Capturamos el evento de envío del formulario
+    
+    event.preventDefault(); // Evitamos que se envie el form 
+
+    event.preventDefault();
+
+    if (confirm('¿Estás seguro de que quieres eliminar este usuario?')) {
+        fetch(URL + 'usuario/'+'"'+ dni+'"', { 
+        method: 'DELETE',
+        // body: formData,
+        })
+        .then(function (response) {
+            
+                if (response.ok) { return response.json(); }
+                
+                })
+        .then(data => {
+            
+            alert('Usuario eliminado correctamente')
+            
+            localStorage.clear()
+            document.getElementById("login").innerHTML = `
+            <li><a href="../pages/login.html" id="login">Login</a></li>`
+
+            window.location.href = '../pages/login.html';
+                
+        })
+        
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al eliminar el Usuario');
+        });
+    }
+
+    }
+
+
+    // ---------------- MODIFICAR USUARIO -------------------------------------------------------------
+
+    // const URL = "http://127.0.0.1:5000/"
+
+    // const app = Vue.createApp({
+    //     data() {
+    //         return {
+    //             nombre: '',
+    //             apellido: '',
+    //             dni: '',
+    //             email: '',
+    //             password: '',
+    //             mostrarDatosProducto: false,
+    //         };
+    //     },
+    //     methods: {
+    //         obtenerProducto() {
+    //             fetch(URL + 'usuario/' + this.email)
+    //                 .then(response => response.json())
+    //                 .then(data => {
+    //                     this.nombre = data.nombre;
+    //                     this.apellido = data.apellido;
+    //                     this.dni = data.dni;
+    //                     this.email = data.email;
+    //                     this.password =  data.password;
+    //                     this.mostrarDatosProducto = true;
+    //                 })
+    //                 .catch(error => console.error('Error:', error));
+    //         },
+    //         guardarCambios() {
+    //             const formData = new FormData();
+    //             formData.append('nombre', this.nombre);
+    //             formData.append('apellido', this.apellido);
+    //             formData.append('dni', this.dni);
+    //             formData.append('email', this.email);
+    //             formData.append('password', this.password);
+
+    //             fetch(URL + 'productos/' + this.email, {
+    //                 method: 'PUT',
+    //                 body: formData,
+    //             })
+    //                 .then(response => response.json())
+    //                 .then(data => {
+    //                     alert('Producto actualizado correctamente');
+    //                     this.limpiarFormulario();
+    //                 })
+    //                 .catch(error => {
+    //                     console.error('Error:', error);
+    //                     alert('Error al actualizar el producto');
+    //                 });
+    //         },
+    //         limpiarFormulario() {
+    //             this.nombre = '';
+    //             this.apellido = '';
+    //             this.dni = '';
+    //             this.email = '';
+    //             this.password = '';
+    //             this.mostrarDatosProducto = true;
+    //         }
+    //     }
+    // });
+
+    // app.mount('#app');
+
+    function modificarUsuarioAPI(event) {
+    // fetch('https://randomuser.me/api')
+    const URL = "http://127.0.0.1:5000/"
+    
+    const nomb = document.querySelector("#nombre").value
+    const ape = document.querySelector("#apellido").value
+    const dni = document.querySelector("#dni").value
+    const email = document.querySelector("#email").value
+    const contra = document.querySelector("#password").value
+
+
+    // Capturamos el evento de envío del formulario
+    
+    event.preventDefault(); // Evitamos que se envie el form 
+    // console.log(mail);
+    var formData = new FormData();
+    formData.append('nombre', nomb);
+    formData.append('apellido', ape);
+    formData.append('dni', dni);
+    formData.append('email', email);
+    formData.append('password', contra);
+
+    // const mail_buscar_usuario = localStorage.getItem('email')
+    event.preventDefault();
+
+        fetch(URL + 'usuario/'+'"'+ dni+'"', { 
+        method: 'PUT',
+        body: formData,
+        })
+        .then(function (response) {
+                if (response.ok) { return response.json(); }
+                })
+        .then(data => {
+            
+            alert('Usuario actualizado correctamente');
+            })
+        
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al actualizar el Usuario');
+        });
+
+
+    }
+
+
+    </script>
+        
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Proyecto CaC Python</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <h1>
+                <a href="../index.html">
+                    <img src="../images/Logo.svg" alt="logo">
+                </a>
+            </h1>
+            <ul>
+                <li><a href="../pages/nuestro_espacio.html">Nuestro Espacio</a></li>
+                <li><a href="../pages/menu.html">Menú</a></li>
+                <li><a href="../pages/reservas.html">Reservas</a></li>
+                <li>
+                    <a href="../pages/login.html" id="login">Log In</a>
+                    <di class="container-login hidden-cart">
+                            <div class="desplegable">
+                                <!-- <p class="cart-empty">El carrito está vacio</p> -->
+                            </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-contacto">
+        <div class="contenedor-contactanos">
+            <form class="contactanos formulario" id="formulario" enctype="multipart/form-data">
+            <!-- action="https://formspree.io/f/meqbnebd" -->
+                <h3 class="titulo__formulario">Crear usuario nuevo</h3>
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="Nombre" class="formulario__label">Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="nombre" class="formulario__input" placeholder="Juan" name="nombre">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe contener de 2 a 15 letras y ningun caracter especial</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__apellido">
+                    <label for="apellido" class="formulario__label">Apellido</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="apellido" class="formulario__input" placeholder="Perez" name="apellido">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe contener de 2 a 15 letras y ningun caracter especial</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__dni">
+                    <label for="dni" class="formulario__label">DNI</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="dni" class="formulario__input" name="dni">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe contener 8 numeros</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__email">
+                    <label for="email" class="formulario__label">Correo electronico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="email" class="formulario__input" placeholder="Juanperez@gmail.com" name="email">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo admite estos caracteres especiales: "/" "_" "@"</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__email-confirm">
+                    <label for="email-confirm" class="formulario__label">Confirmar correo</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" id="email-confirm" class="formulario__input" name="email-confirm">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">Los correos deben coincidir</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__password">
+                    <label for="password" class="formulario__label">Contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" id="password" class="formulario__input" name="password">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">ESte campo debe contener de 6 a 15 digitos</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__password-confirm">
+                    <label for="password-confirm" class="formulario__label">Confirmar contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" id="password-confirm" class="formulario__input" name="password-confirm">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">Las contraseñas deben coincidir</p>
+                </div>
+
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellena el formulario correctamente</p>
+                </div>
+                <section class="btn-contacto">
+                    <button type="submit" class="button"> Alta Usuario</button>
+                    <input type="reset" value="Borrar" class="borrar">
+                    <!-- <button class="button"><a href="../index.html"></a>Menú principal</button> -->
+                </section>
+            </form>
+        </div>
+    </main>
+    
+
+
+    <script src="../login.js"></script>
+    <script src="../validacion.js"></script>
+    <script src="https://kit.fontawesome.com/25b6b6b0bb.js" crossorigin="anonymous"></script>
+    <script>
+        const URL = "http://127.0.0.1:5000/"
+
+        // Capturamos el evento de envío del formulario
+        document.getElementById('formulario').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitamos que se envie el form 
+
+            var formData = new FormData();
+            formData.append('nombre', document.getElementById('nombre').value);
+            formData.append('apellido', document.getElementById('apellido').value);
+            formData.append('dni', document.getElementById('dni').value);
+            formData.append('email', document.getElementById('email').value);
+            formData.append('password', document.getElementById('password').value);
+            // formData.append('proveedor', document.getElementById('proveedorProducto').value);
+            // formData.append('imagen', document.getElementById('imagenProducto').files[0]);
+        
+                fetch(URL + 'usuario', { 
+                method: 'POST',
+                body: formData // Aquí enviamos formData en lugar de JSON
+                })
+            .then(function (response) {
+                if (response.ok) { return response.json(); }
+                })
+            .then(function (data) {
+                alert('Usuario agregado correctamente.');
+                // Limpiar el formulario para el proximo producto
+                document.getElementById('nombre').value = "";
+                document.getElementById('apellido').value = "";
+                document.getElementById('dni').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('email-confirm').value = "";
+                document.getElementById('password').value = "";
+                document.getElementById('password-confirm').value = "";
+                // document.getElementById('imagen').value = "";
+                // document.getElementById('proveedor').value = "";
+                })
+            .catch(function (error) {
+                // Mostramos el error, y no limpiamos el form.
+                // Borre el error que aparecia aca porque lo agregue en validacion.js
+            });
+        
+        })
+    </script>
+</body>
+
+</html>

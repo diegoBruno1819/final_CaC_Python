@@ -1,0 +1,577 @@
+body {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.76);
+
+}
+
+body,
+ul {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    height: 4.5rem;
+    background-color: rgb(29, 14, 14);
+    position: relative;
+    top: 40px;
+}
+
+nav h1 {
+    margin: 20px 6rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    width: 60%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: -3rem;
+}
+
+
+nav ul li {
+    list-style-type: none;
+    font-size: 18px;
+    padding-left: 40px;
+}
+
+nav a img {
+    height: 30px;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a:hover {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.778);
+}
+
+.main_index {
+    width: 100vw;
+}
+
+.img_main {
+    background-image: url(../images/plato_sushi.png);
+    width: 100vw;
+    height: 95vh;
+    margin-left: 5rem;
+}
+
+
+
+.txt_main {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 8rem;
+    margin-left: 4rem;
+}
+
+.txt_main h3 {
+    font-size: 35px;
+    margin: 1rem;
+
+}
+
+.txt_main .texto-grande {
+    font-size: 40px;
+    display: flex;
+
+
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+.logo_copy_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo_copy_footer p {
+    margin-top: 0;
+}
+
+.logo_copy_footer {
+    margin-bottom: 0;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.rrss_footer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 40px;
+    padding-left: 5rem;
+    font-size: 14px;
+}
+
+
+.lista_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    padding-left: 15rem;
+}
+
+.rrss_footer p {
+    margin-top: 5px;
+}
+
+i {
+    font-size: 25px;
+    margin: 15px;
+    margin-bottom: 0;
+}
+
+
+.email {
+    text-align: center;
+}
+
+.logo-footer {
+    width: 65%;
+}
+
+.main_espacio {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: auto 8rem;
+}
+
+.seccion1_main {
+    display: flex;
+    flex-direction: row;
+}
+
+.seccion1_main img {
+    width: 20%;
+    margin: 4rem 0;
+}
+
+.titulo_nuestro_espacio {
+    width: 60%;
+    margin: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.seccion1_main h1 {
+    margin: 0 0 3rem 0;
+    font-size: 35px;
+}
+
+.seccion1_main h2,
+h3 {
+    font-size: 18px;
+    margin-right: 2rem;
+}
+
+.seccion2_main {
+    display: flex;
+    gap: 10%;
+}
+
+.seccion2_main img {
+    width: 20%;
+}
+
+.parrafo_espacio {
+    font-size: 20px;
+    margin: 4rem 18rem auto auto;
+}
+
+.seccion3_main {
+    width: 82%;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.seccion3_main img {
+    width: 48%;
+}
+
+.main_menu {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 140vh;
+}
+
+.seccion1_menu {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion1_menu h1 {
+    margin-top: 12rem;
+    font-size: 40px;
+}
+
+.selec_mesa{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.selec_mesa h3{
+    font-size: 35px;
+    margin-left: 2rem;
+}
+
+.posicion {
+    
+    height: 90%;
+    width: 70%;
+}
+
+.posicion_menu {
+    height: 75%;
+    width: 50%;
+}
+
+.seccion2_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 40%;
+}
+
+.img1-menu {
+    position: relative;
+    width: 480px;
+    transform: translate(0px, 10px);
+}
+
+.img2-menu {
+    position: relative;
+    width: 500px;
+    transform: translate(0px, -400px);
+}
+
+
+.main-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-contacto .contenedor-contactanos {
+    width: 80%;
+    height: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.main-contacto .contactanos {
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: center;
+    text-align: center; */
+    width: 90%;
+    height: auto;
+    color: black;
+    background-color: rgb(219, 216, 216);
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.main-contacto .contactanos h3 {
+    margin-top: 1.5rem;
+    font-size: 25px;
+}
+
+/* .main-contacto .contactanos label {
+    margin: 8px 1px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+
+.main-contacto .contactanos input {
+    background-color: rgba(249, 249, 249, 0.4);
+    border: solid 1px grey;
+}
+
+.main-contacto .contactanos input:focus{
+    border: solid 2px black;
+}
+
+.main-contacto .contactanos textarea {
+    background-color: rgba(249, 249, 249, 0.5);
+    border: solid 1px grey;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 70%;
+}
+
+.main-contacto .contactanos legend {
+    margin: 5px auto;
+    font-size: 18px;
+}
+
+.main-contacto .contactanos textarea::placeholder {
+    color: grey;
+}
+
+.main-contacto .contactanos .nombre,
+.main-contacto .contactanos .apellido,
+.main-contacto .contactanos .email,
+.main-contacto .contactanos .dni,
+.main-contacto .contactanos .password {
+    width: 40%;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+} */
+
+.btn-contacto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+/* .main-contacto .contactanos .btn-contacto .enviar, */
+.main-contacto .contactanos .btn-contacto .borrar,
+.main-contacto .contactanos .btn-contacto .button {
+    color: rgb(255, 255, 255);
+    margin: auto 15px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* .main-contacto .contactanos .btn-contacto .borrar:hover,
+.main-contacto .contactanos .btn-contacto .button:hover{
+    border: ;
+} */
+
+/* .main-contacto .contactanos .nombre,
+.main-contacto .contactanos .apellido,
+.main-contacto .contactanos .email,
+.main-contacto .contactanos .dni,
+.main-contacto .contactanos .password,
+.main-contacto .contactanos ::placeholder {
+    text-align: center;
+    font-size: 15px;
+    padding: 2px;
+} */
+
+.btn-contacto p a{
+    color: rgb(31, 31, 255);
+}
+
+.login-form .password{
+    margin-left: 4.4rem;
+    padding: 2px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form .email{
+    margin-left: 1rem;
+    padding: 2px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.login-form label{
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+.main-contacto .formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.formulario__label{
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.formulario__grupo-input{
+    position: relative;
+}
+
+.formulario__input{
+    width: 90%;
+    background-color: white;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    transition: .3s ease all;
+    font-size: 14px;
+    padding: 0 12px;
+}
+
+.formulario__input:focus{
+    border: 3px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0 30px rgba(163, 163, 163, 0.4);
+}
+
+.formulario__input-error{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-active{
+    display: block;
+}
+
+.formulario__validacion-estado{
+    position: absolute;
+    right: 14px;
+    top: 1px;
+    font-size: 20px;
+    z-index: 100;
+    opacity: 0;
+}
+
+.formulario__mensaje,
+.btn-contacto,
+.titulo__formulario {
+    grid-column: span 2;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background-color: #fd5e5e;
+    color: black;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-active{
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: -8px;
+}
+
+
+/* ------------- ESTILOS PARA VALIDACION -------------- */
+
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+    color: #da2828;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #da2828;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #da2828;
+}
+
+/*  ------------------------------------------------------- */
+
+.container-login{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    width: 350px;
+    z-index: -1;
+    font-size: 14px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.352);
+    border-radius: 10px;
+}
+
+/* .desplegable{
+    display: none;
+} */
+
+#login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -2rem;
+}
+
+#cerrar-sesion {
+    background-color: rgb(92, 42, 92);
+    color: white;
+    border-radius: 2px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.778);
+    padding: 4px;
+}
+
+/* ------------- MEDIA QUERYS -------------- */
+
+@media screen and (max-width: 800px) {
+    .main-contacto .formulario{
+        grid-template-columns: 1fr;
+    }
+
+    .formulario__mensaje,
+.btn-contacto,
+.titulo__formulario {
+    grid-column: span 1;
+}
+}
